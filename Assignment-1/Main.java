@@ -63,15 +63,16 @@ public class Main {
             }
         }//End for
 
+        System.out.println("INFO: " + amountINFO);
+        System.out.println("WARN: " + amountWARN);
+        System.out.println("ERROR: " + amountERROR);
+        System.out.println("Memory Warning: " + amountWARNINGMemory + "\n");
+        System.out.println("Recent 100 Errors (printed in reverse order):");
+
         for(int i = 0; i < 100; i++)
         {
             String nextError = errorLog.pop();
             System.out.println(nextError);
         }//End for
-
-        System.out.println("Amount of ERROR messages: " + amountERROR);
-        System.out.println("Amount of INFORMATION messages: " + amountINFO);
-        System.out.println("Amount of WARNING messages: " + amountWARN);
-        System.out.println("Amount of WARNING messages including Memory: " + amountWARNINGMemory);
     }
 }
