@@ -8,6 +8,9 @@ account8
 Your password is not strong enough, please note the explanation below:
 INSUFFICIENT COMPLEXITY: This password is contained in our dictionary of commonly used passwords, we recommend using at least 2 numbers at the end of your password to ensure its complexity!
 
+Cost of Search for Separate Chaining: 5002 Comparisons
+Cost of Search for Linear Probing: 5853 Comparisons
+
 Process finished with exit code 0
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -18,6 +21,9 @@ accountability
 Your password is not strong enough, please note the explanation below:
 INSUFFICIENT COMPLEXITY: This password is contained in our dictionary of commonly used passwords
 
+Cost of Search for Separate Chaining: 5002 Comparisons
+Cost of Search for Linear Probing: 5853 Comparisons
+
 Process finished with exit code 0
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -26,6 +32,9 @@ EXAMPLE OUTPUT(3/5):
 Please input your password:
 9a$D#qW7!uX&Lv3zT
 Your password is strong!
+
+Cost of Search for Separate Chaining: 5002 Comparisons
+Cost of Search for Linear Probing: 5853 Comparisons
 
 Process finished with exit code 0
 
@@ -36,6 +45,9 @@ Please input your password:
 B@k45*W!c$Y7#zR9P
 Your password is strong!
 
+Cost of Search for Separate Chaining: 5002 Comparisons
+Cost of Search for Linear Probing: 5853 Comparisons
+
 Process finished with exit code 0
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -45,6 +57,7 @@ Please input your password:
 X$8vQ!mW#3Dz&Yr4K5
 Your password is strong!
 
-Process finished with exit code 0
+Cost of Search for Separate Chaining: 5002 Comparisons
+Cost of Search for Linear Probing: 5853 Comparisons
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Process finished with exit code 0
