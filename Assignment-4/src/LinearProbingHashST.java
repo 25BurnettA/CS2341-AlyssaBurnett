@@ -1,11 +1,13 @@
 public class LinearProbingHashST<Key, Value>
 {
     private int M = 20000;
+    private int comparisons = 0;
     private Value[] vals = (Value[]) new Object[M];
     private Key[] keys = (Key[]) new Object[M];
 
     private int hash(Key key)
     {
+        comparisons++;
         String keyString = String.valueOf(key);
         return (stringHash(keyString) & 0x7fffffff) % M;
     }
@@ -19,11 +21,12 @@ public class LinearProbingHashST<Key, Value>
         return hash;
     }
 
-    private void put(Key key, Value val)
+    public void put(Key key, Value val)
     {
         int i;
         for (i = hash(key); keys[i] != null; i = (i+1) % M)
         {
+            comparisons++;
             if (keys[i].equals(key))
             {
                 break;
@@ -43,5 +46,10 @@ public class LinearProbingHashST<Key, Value>
             }
         }
         return null;
+    }
+
+    public int getComparisons()
+    {
+        return comparisons;
     }
 }
