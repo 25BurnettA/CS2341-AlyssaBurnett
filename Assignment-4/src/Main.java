@@ -9,7 +9,8 @@ public class Main
     public static void main(String[] args)
     {
         File wordlist = new File("assets/wordlist.10000.txt");
-        SeparateChainingHashST sc = new SeparateChainingHashST(1000);
+        SeparateChainingHashST sc = new SeparateChainingHashST();
+        LinearProbingHashST lb = new LinearProbingHashST();
 
         int positionCount = 1;
 
@@ -20,7 +21,7 @@ public class Main
             while (dictionary.hasNext())
             {
                 sc.put(dictionary.next(), positionCount);
-                //sc.put(positionCount, dictionary.next());
+                lb.put(dictionary.next(), positionCount);
                 positionCount++;
             }//End while
 
@@ -82,12 +83,16 @@ public class Main
         //Prints out final password message
         if(strong == 3)
         {
-            System.out.println("Your password is strong!");
+            System.out.println("Your password is strong!\n");
+            System.out.println("Cost of Search for Separate Chaining: " + sc.getComparisons() + " Comparisons");
+            System.out.println("Cost of Search for Linear Probing: " + lb.getComparisons() + " Comparisons");
         }
         else
         {
             System.out.println("Your password is not strong enough, please note the explanation below:");
-            System.out.println(errorExplanation);
+            System.out.println(errorExplanation + "\n");
+            System.out.println("Cost of Search for Separate Chaining: " + sc.getComparisons() + " Comparisons");
+            System.out.println("Cost of Search for Linear Probing: " + lb.getComparisons() + " Comparisons");
         }
 
     }
