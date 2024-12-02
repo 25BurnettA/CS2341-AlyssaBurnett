@@ -6,6 +6,7 @@ public class SeparateChainingHashST<Key, Value>
 {
     private int N; // number of key-value pairs
     private int M; // hash table size
+    private int comparisons = 0;
     private SequentialSearchST<Key, Value>[] st = new SequentialSearchST[M]; // array of ST objects
 
     public SeparateChainingHashST()
@@ -35,6 +36,7 @@ public class SeparateChainingHashST<Key, Value>
 
     private int hash(Key key)
     {
+        comparisons++;
         String keyString = String.valueOf(key);
         return (stringHash(keyString) & 0x7fffffff) % M;
     }
@@ -64,6 +66,7 @@ public class SeparateChainingHashST<Key, Value>
 
         for (SequentialSearchST<Key, Value> bucket : st)
         {
+            comparisons++;
             for(Key key : bucket.keys())
             {
                 keyList.add(key);
@@ -71,6 +74,10 @@ public class SeparateChainingHashST<Key, Value>
         }
 
         return keyList;
+    }
 
+    public int getComparisons()
+    {
+        return comparisons;
     }
 }
