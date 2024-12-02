@@ -6,8 +6,17 @@ public class LinearProbingHashST<Key, Value>
 
     private int hash(Key key)
     {
-        System.out.println("here");
-        return (key.hashCode() & 0x7fffffff) % M;
+        String keyString = String.valueOf(key);
+        return (stringHash(keyString) & 0x7fffffff) % M;
+    }
+
+    public  int stringHash(String key)
+    {
+        int hash = 0;
+        int skip = Math.max(1, key.length() / 8);
+        for (int i = 0; i < key.length(); i += skip)
+            hash = (hash * 37) + key.charAt(i);
+        return hash;
     }
 
     private void put(Key key, Value val)
